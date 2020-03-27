@@ -26,17 +26,16 @@ architecture Behavioral of datapath is
 
 	component register_file
 		Port(
-			write : in std_logic;
-			d_address: in std_logic_vector(2 downto 0);
-			a_address: in std_logic_vector(2 downto 0);
-			b_address: in std_logic_vector(2 downto 0);
-			
-			d_data: in std_logic_vector(15 downto 0);
-			a_data: out std_logic_vector(15 downto 0);
-			b_data:  suttd_logic_vector(15 downto 0);
-			clk: in std_logic
-		);
-		end component;
+			 write : in std_logic;
+            d_address : in std_logic_vector(2 downto 0); 
+            a_address : in std_logic_vector(2 downto 0);
+            b_address : in std_logic_vector(2 downto 0);
+            d_data : in std_logic_vector(15 downto 0); 
+            a_data : out std_logic_vector(15 downto 0); 
+            b_data : out std_logic_vector(15 downto 0); 
+            clk : in std_logic
+	);
+	end component;
 		
 	component multiplexer_2to1
 		Port(
@@ -50,7 +49,7 @@ architecture Behavioral of datapath is
 	component functional_unit
 	Port(
 		a, b: in std_logic_vector(15 downto 0);
-		f_select: in std_logic_vector(4 downto 0);
+		fs: in std_logic_vector(4 downto 0);
 		f: out std_logic_vector(15 downto 0);
 		v, c, n, z: out std_logic
 	);
@@ -74,11 +73,19 @@ begin
             clk => clk
 		);
 		
+	mux_b : multiplexer_2to1
+	   Port Map(
+	       i0 => b_data,
+	       i1 => constant_in,
+	       s => mb_sel,
+	       Z => mux_b_z
+	   );
+		
 	fu: functional_unit
 		Port Map(
 			a => a_data,
 			b => mux_b_z,
-			fs => f_select,
+			fs => fs,
 			f => f,
 			v => v,
 			c => c, 

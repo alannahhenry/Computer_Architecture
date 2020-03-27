@@ -6,7 +6,7 @@ use IEEE.STD_LOGIC_UNSIGNED.ALL;
 entity functional_unit is
 	Port(
 		a, b: in std_logic_vector(15 downto 0);
-		f_select: in std_logic_vector(4 downto 0);
+		fs: in std_logic_vector(4 downto 0);
 		f: out std_logic_vector(15 downto 0);
 		v, c, n, z: out std_logic
 	);
@@ -60,8 +60,8 @@ begin
 		Port Map(
 			a => a,
 			b => b,
-			c_in => f_select(0),
-			g_sel => f_select(3 downto 1);
+			c_in => fs(0),
+			g_sel => fs(3 downto 1),
 			c_out => c,
 			v => v,
 			g => g
@@ -70,7 +70,7 @@ begin
 	shifter16: shifter
 		Port Map (
 			B => b,
-			S => f_select(3 downto 2),
+			S => fs(3 downto 2),
 			IL => '0',
 			IR => '0',
 			H => h
@@ -80,7 +80,7 @@ begin
 		Port Map(
 			i0 => g,
 			i1 => h, 
-			s => f_select(4),
+			s => fs(4),
 			Z => f
 		);
 		

@@ -163,7 +163,7 @@ begin
 	mux15: multiplexer_3to1
 		Port Map(
 			i0 => B(15),
-			i1 => B(16), 
+			i1 => IL, 
 			i2 => IR,
 			s => S,
 			z => H(15)
