@@ -8,7 +8,7 @@ end full_adder_tb;
 
 architecture Behavioral of full_adder_tb is
 	
-	component full_adder_tb
+	component full_adder
 		Port(
 			A: in std_logic;
 			B: in std_logic;

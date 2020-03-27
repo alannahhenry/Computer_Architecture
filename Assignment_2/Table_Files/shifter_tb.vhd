@@ -31,7 +31,7 @@ begin
 			B => B,
 			S => S,
 			IL => IL,
-			IR => IR
+			IR => IR,
 			H => H
 		);
 		

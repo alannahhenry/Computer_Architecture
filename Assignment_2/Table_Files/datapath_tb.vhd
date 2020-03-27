@@ -128,7 +128,7 @@ begin
 			wait for delay;
 			
 			-- testing bus-b
-			b_adress <= "001";
+			b_address <= "001";
 			wait for delay;
 			
 			----select bus-b <- b_data

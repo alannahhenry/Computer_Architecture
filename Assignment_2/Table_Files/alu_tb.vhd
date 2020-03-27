@@ -72,7 +72,7 @@ begin
 			
 			wait for 1ns;
 			g_sel <= "011";
-			c_in <= '000';
+			c_in <= '0';
 			
 			wait for 1ns;
 			g_sel <= "011";
