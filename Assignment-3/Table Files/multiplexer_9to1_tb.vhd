@@ -21,7 +21,7 @@ architecture Behavioral of multiplexer_9to1tb is
 			I7: in std_logic_vector(15 downto 0);
 			I8: in std_logic_vector(15 downto 0);
 			
-			Z: out std_logic_vector(15 downto 0);
+			Z: out std_logic_vector(15 downto 0)
 		);
 	end component;
 	
@@ -62,7 +62,7 @@ begin
 			I1 <= x"00BB";
 			I2 <= x"00CC";
 			I3 <= x"00DD";
-			I4 <= x"00DEE";
+			I4 <= x"00EE";
 			I5 <= x"00FF";
 			I6 <= x"00AA";
 			I7 <= x"00BB";
