@@ -22,7 +22,7 @@ architecture Behavioral of alu is
 			A: in std_logic_vector(15 downto 0);
 			B: in std_logic_vector(15 downto 0);
 			C_in: in std_logic;
-			S: out std_logic(15 downto 0);
+			S: out std_logic_vector(15 downto 0);
 			C_out: out std_logic;
 			V: out std_logic
 		);
@@ -44,6 +44,7 @@ architecture Behavioral of alu is
             s: in std_logic_vector(1 downto 0);
             z: out std_logic_vector(15 downto 0)
 		);
+	end component;
 	
 	signal y, arith_z, logic_z : std_logic_vector(15 downto 0);
 	
