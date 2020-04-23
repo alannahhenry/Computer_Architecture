@@ -51,8 +51,8 @@ architecture Behavioral of datapath is
 		
 			data: in std_logic_vector(15 downto 0);
 		
-			a_out: std_logic_vector(15 downto 0);
-			b_out: std_logic_vector(15 downto 0);
+			a_out: out std_logic_vector(15 downto 0);
+			b_out: out std_logic_vector(15 downto 0);
 		
 			reg0: out std_logic_vector(15 downto 0);
 			reg1: out std_logic_vector(15 downto 0);
@@ -87,7 +87,7 @@ architecture Behavioral of datapath is
 	component zerofill
 		Port(
 			 SB : in std_logic_vector(2 downto 0);
-			`zeroFill : out std_logic_vector(15 downto 0)
+			zeroFill : out std_logic_vector(15 downto 0)
 		);
 	end component;
 	
@@ -105,6 +105,9 @@ begin
 			
 			data => Data,
 			
+			a_out => ABus,
+            b_out => BOut,
+            
 			reg0 =>reg_0_out,
 			reg1 =>reg_2_out,
 			reg2 =>reg_0_out,
@@ -113,7 +116,7 @@ begin
 			reg5 =>reg_5_out,
 			reg6 =>reg_6_out,
 			reg7 =>reg_7_out,
-			reg8 =>reg_8_out,
+			reg8 =>reg_8_out
 		);
 		
 	mux_b : multiplexer_2to1
@@ -147,7 +150,7 @@ begin
 	fill_zero : zerofill
 		Port Map(
 			SB => SB,
-			zeroFill
+			zeroFill => Conin
 		);
 		
 	data_out <= BBus;
