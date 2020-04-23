@@ -6,7 +6,7 @@ use IEEE.STD_LOGIC_UNSIGNED.ALL;
 entity decoder_4to9tb is
 end decoder_4to9tb;
 
-architecture Behavioral of decoder_4to9tb is
+architecture Behavioral of decoder_4to9 is
 
 	component decoder_4to9tb is
 		Port(
