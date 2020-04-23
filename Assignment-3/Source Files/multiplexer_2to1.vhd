@@ -20,4 +20,4 @@ begin
 	    i1 after 5 ns when s='1' else
 	    "0000000000000000" after 5 ns;
 
-end Behavioral
+end Behavioral;
