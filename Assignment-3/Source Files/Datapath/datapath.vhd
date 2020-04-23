@@ -17,7 +17,7 @@ entity datapath is
 		Asel: in std_logic_vector(3 downto 0);
 		Bsel: in std_logic_vector(3 downto 0);
 		
-		FS: in std_logic(4 downto 0);
+		FS: in std_logic_vector(4 downto 0);
 		RW: in std_logic;
 		Clk: in std_logic;
 		
