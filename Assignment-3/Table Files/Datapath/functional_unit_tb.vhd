@@ -11,14 +11,14 @@ architecture Behavioral of functional_unit_tb is
 	component functional_unit is 
 		Port(
 			a, b: in std_logic_vector(15 downto 0);
-			f_select: in std_logic_vector(4 downto 0);
+			fs: in std_logic_vector(4 downto 0);
 			f: out std_logic_vector(15 downto 0);
 			v, c, n, z: out std_logic
 		);
 	end component;
 	
 	signal a, b: std_logic_vector(15 downto 0);
-	signal f_select: std_logic_vector(4 downto 0);
+	signal fs: std_logic_vector(4 downto 0);
 	signal f:  std_logic_vector(15 downto 0);
 	signal v, c, n, z: std_logic;
 	
@@ -28,7 +28,7 @@ begin
 		Port Map(
 			a => a,
 			b => b,
-			f_select => f_select,
+			fs => fs,
 			f => f, 
 			v => v,
 			c => c, 
@@ -39,79 +39,79 @@ begin
 	sim: process
 	begin	
 		
-		f_select <= "00000";
+		fs <= "00000";
 		a <= x"00aa";
 		b <= x"00bb";
 		wait for 1ns;
 		
-		f_select <= "00001";
+		fs <= "00001";
 		a <= x"00aa";
 		b <= x"00bb";
 		wait for 1ns;
 		
-		f_select <= "00010";
+		fs <= "00010";
 		a <= x"0002";
 		b <= x"0001";
 		wait for 1ns;
 		
-		f_select <= "00011";
+		fs <= "00011";
 		a <= x"7ffe";
 		b <= x"0001";
 		wait for 1ns;
 		
-		f_select <= "00100";
+		fs <= "00100";
 		a <= x"0001";
 		b <= x"fffc";
 		wait for 1ns;
 		
-		f_select <= "00101";
+		fs <= "00101";
 		a <= x"000f";
 		b <= x"fffe";
 		wait for 1ns;
 		
-		f_select <= "00110";
+		fs <= "00110";
 		a <= x"000a";
 		b <= x"000b";
 		wait for 1ns;
 		
-		f_select <= "00111";
+		fs <= "00111";
 		a <= x"000a";
 		b <= x"000b";
 		wait for 1ns;
 		
 		--logic
-		f_select <= "01000";
+		fs <= "01000";
 		a <= x"f0cf";
 		b <= x"abcd";
 		wait for 1ns;
 		
-		f_select <= "01010";
+		fs <= "01010";
 		a <= x"ff00";
 		b <= x"a0ee";
 		wait for 1ns;
 		
-		f_select <= "01100";
+		fs <= "01100";
 		a <= x"ffff";
 		b <= x"abcd";
 		wait for 1ns;
 		
-		f_select <= "01110";
+		fs <= "01110";
 		a <= x"aa11";
 		b <= x"ffff";
 		wait for 1ns;
 		
 		--shifter
-		f_select <= "10000";
+		fs <= "10000";
 		a <= x"000a";
 		b <= x"000b";
 		wait for 1ns;
 		
-		f_select <= "10100";
+		fs <= "10100";
 		a <= x"000a";
 		b <= x"000b";
 		wait for 1ns;
 		
-		f_select <= "11000";
+		fs <= "11000";
 		a <= x"000a";
 		b <= x"000b";
 		wait for 1ns;

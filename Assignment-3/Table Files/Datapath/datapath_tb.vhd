@@ -73,6 +73,10 @@ architecture Behavioral of datapath_tb is
 				PC_in => PC_in,
 				SB => SB, 
 				
+				MB => MB,
+		        MD => MD,
+		        MM => MM,
+				
 				Dsel => Dsel,
 				Asel => Asel,
 				Bsel => Bsel,
@@ -104,7 +108,7 @@ architecture Behavioral of datapath_tb is
 	begin
 	
 		RW <= '1';
-		MM <= '0'
+		MM <= '0';
 		PC_in <= x"0000";
 		MD <= '1';
 		MB <= '0';
