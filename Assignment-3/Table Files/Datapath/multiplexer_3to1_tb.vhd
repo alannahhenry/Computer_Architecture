@@ -8,7 +8,7 @@ end multiplexer_3to1_tb;
 
 architecture Behavioral of multiplexer_3to1_tb is
 
-	constant delay : time := 1ns
+	constant delay : time := 1ns;
 	
 	component multiplexer_3to1 
 		Port(
