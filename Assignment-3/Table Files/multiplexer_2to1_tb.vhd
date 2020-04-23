@@ -20,7 +20,7 @@ architecture Behavioral of multiplexer_2to1_tb is
 
 	signal i0 : std_logic_vector(15 downto 0):= "0000000000000000";
 	signal i1 : std_logic_vector(15 downto 0):= "0000000000000000";
-	signal s : std_logic := "0";
+	signal s : std_logic := '0';
 
 	signal Z : std_logic_vector(15 downto 0):= "0000000000000000";
 
