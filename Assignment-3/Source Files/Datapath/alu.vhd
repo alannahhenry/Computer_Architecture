@@ -63,7 +63,7 @@ begin
 		Port Map(
 			i0 => arith_z,
 			i1 => logic_z,
-			S => g_sel(1 downto 0),
+			S => g_sel(2),
 			Z => g
 		);
 		
