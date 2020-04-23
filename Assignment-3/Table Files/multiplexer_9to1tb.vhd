@@ -62,7 +62,7 @@ begin
 			I1 <= x"00BB";
 			I2 <= x"00CC";
 			I3 <= x"00DD";
-			I4 <= x"00DEE";
+			I4 <= x"00EE";
 			I5 <= x"00FF";
 			I6 <= x"00AA";
 			I7 <= x"00BB";
