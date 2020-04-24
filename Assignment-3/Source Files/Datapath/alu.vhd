@@ -5,13 +5,13 @@ use IEEE.STD_LOGIC_UNSIGNED.ALL;
 
 entity alu is
 	Port(
-		a: in std_logic_vector(15 downto 0);
-		b: in std_logic_vector(15 downto 0);
-		c_in: in std_logic;
-		g_sel: in std_logic_vector(2 downto 0);
-		c_out: out std_logic;
+		a: in std_logic_vector(15 downto 0); --A
+		b: in std_logic_vector(15 downto 0); --B
+		c_in: in std_logic; --Cin
+		g_sel: in std_logic_vector(2 downto 0); -- S0, S1, S2
+		c_out: out std_logic; --Cout
 		v: out std_logic;
-		g: out std_logic_vector(15 downto 0)
+		g: out std_logic_vector(15 downto 0) --G
 	);
 end alu;
 
@@ -39,10 +39,10 @@ architecture Behavioral of alu is
 	
 	component logic_unit
 		Port(
-            a: in std_logic_vector(15 downto 0);
+            a: in std_logic_vector(15 downto 0); --
             b: in std_logic_vector(15 downto 0);
             s: in std_logic_vector(1 downto 0);
-            z: out std_logic_vector(15 downto 0)
+            z: out std_logic_vector(15 downto 0) 
 		);
 	end component;
 	
