@@ -5,7 +5,7 @@ use IEEE.STD_LOGIC_UNSIGNED.ALL;
 
 entity extend is
 	Port(
-		DR_SB: in std_logic(5 downto 0);
+		DR_SB: in std_logic_vector(5 downto 0);
 		ext: out std_logic_vector(15 downto 0)
 	);
 end extend;

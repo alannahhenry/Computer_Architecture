@@ -8,6 +8,7 @@ entity car is
 		car_in: in std_logic_vector(7 downto 0);
 		s: in std_logic;
 		reset: in std_logic;
+		Clk : in std_logic;
 		car_out: out std_logic_vector(7 downto 0)
 	);
 end car;
@@ -15,18 +16,12 @@ end car;
 architecture Behavioral of car is 
 	begin
 		
-		process(reset, car_in)
+		process(reset, Clk)
 			variable current : std_logic_vector(7 downto 0);
-			variable temp : integer;
-			variable increment : std_logic_vector(7 downto 0);
-			
+
 			begin
 				if(reset = '1') then current := x"c0";
-				elsif(s = '1') then current := car_in;
-				elsif(s = '0') then
-					temp := conv_integer(current);
-					increment:= conv_std_logic_vector(temp, 8);
-					current := increment;
+				elsif(s = '1' and Clk ='1') then current := car_in;
 				end if;
 				
 				car_out <= current;

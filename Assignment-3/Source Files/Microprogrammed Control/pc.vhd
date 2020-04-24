@@ -18,7 +18,7 @@ architecture Behavioral of pc is
 	
 	begin	
 		process(Clk, reset, PL, PI)
-			variable pcvar ; std_logic_vector(15 downto 0);
+			variable pcvar : std_logic_vector(15 downto 0);
 			variable temp: integer;
 			variable increment: std_logic_vector(15 downto 0);
 			
